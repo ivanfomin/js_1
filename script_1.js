@@ -26,7 +26,7 @@ function f() {
     var x = 24;
 }
 
-function f_1() {
+function f1() {
     x = 24;
 }
 
@@ -34,7 +34,7 @@ f();
 
 console.log(x); //42
 
-f_1();
+f1();
 
 console.log(x); //24
 
@@ -50,7 +50,7 @@ function squareRoom(l, w, h) {
     var wall_3 = wall_1;
     var wall_4 = wall_2;
 
-    return [wall_1, wall_2, wall_3, wall_4]
+    return [wall_1, wall_2, wall_3, wall_4];
 }
 
 var square = squareRoom(length, width, height);
