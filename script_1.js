@@ -63,14 +63,15 @@ for (i = 0; i < square.length; ++i) {
     sum += square[i];
 }
 
-console.log(sum);
+console.log(sum);   //35
 
 const wallpaper_1 = 1;  //1m length of the roll
 const wallpaper_2 = 0.6;    //0.6m length of the roll
+const roll = 10;    //length of the roll
 
-console.log("First case quantity rolls for the room " + Math.ceil(sum / wallpaper_1));
+console.log("First case quantity rolls for the room " + Math.ceil(sum / wallpaper_1 / roll));  //4
 
-console.log("Second case quantity rolls for the room " + Math.ceil(sum / wallpaper_2));
+console.log("Second case quantity rolls for the room " + Math.ceil(sum / wallpaper_2 / roll)); //6
 
 
 
