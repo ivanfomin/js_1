@@ -1,6 +1,3 @@
-/**
- * Created by ioan on 30.09.17.
- */
 'use strict';
 
 
@@ -69,35 +66,52 @@ class Animal {
     }
 }
 
-class Pig {
-    constructor(weight, dirty) {
+class Pig extends Animal {
+    constructor(sex, legs, tail, swing, weight, dirty) {
+        super(sex, legs, tail, swing);
         this.weight = weight;
         this.dirty = dirty;
     }
+
+    //Хрюкаем
+    grunt() {
+        return "Snake, snake!!!";
+    }
 }
 
-class Peppa {
-    constructor(mood) {
+class Peppa extends Pig {
+    constructor(sex, legs, tail, swing, weight, dirty, mood) {
+        super(sex, legs, tail, swing, weight, dirty);
         this._moods = ['FUN', 'OK', 'SAD'];
         this.myMood = this._moods[mood];
     }
 
-    get moods() {
-        return this._moods;
+    grunt() {
+        if (this.myMood === this._moods[0]) {
+            return super.grunt();
+        } else if (this.myMood === this._moods[1]) {
+            return "Snake.";
+        } else if (this.myMood === this._moods[2]) {
+            return "Dash it!";
+        }
     }
 
-    set moods(value) {
-        this._moods = value;
+    //Устанавливаем настроение
+    moods(value) {
+        this.myMood = this._moods[value];
     }
 }
 
-Pig.__proto__ = new Animal('m',4,true,false);
 
-Peppa.__proto__ = new Pig(30,true);
+let p = new Peppa('m', 4, true, false, 42, true, 1);
 
-let p = new Peppa(1);
 console.log(p.myMood);  //OK
-console.log(p.legs);
+
+p.moods(2);
+
+console.log(p.grunt());  //Dash it!
+
+
 
 
 
