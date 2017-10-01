@@ -18,6 +18,7 @@ var peppa = {
     myMood: ''
 };
 
+//Устанавливаем настроение
 peppa.myMood = peppa.moods[1];
 
 console.log(peppa.myMood);  //OK
@@ -26,6 +27,7 @@ pig.__proto__ = animal;
 
 peppa.__proto__ = pig;
 
+//Хрюкаем
 pig.grunt = function () {
     return "Snake, snake!!!";
 }
@@ -33,6 +35,7 @@ pig.grunt = function () {
 console.log(pig.grunt());   //Snake, snake!!!
 console.log(peppa.grunt()); //Snake, snake!!!
 
+//Хрюкаем от настроения
 peppa.grunt = function () {
     var str = '';
     if (this.myMood === this.moods[0]) {
@@ -103,7 +106,7 @@ class Peppa extends Pig {
 }
 
 
-let p = new Peppa('m', 4, true, false, 42, true, 1);
+var p = new Peppa('m', 4, true, false, 42, true, 1);
 
 console.log(p.myMood);  //OK
 
