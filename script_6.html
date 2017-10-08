@@ -21,6 +21,8 @@
         {name: "Peugeot", level: "2006-2010", country: "Франция", price: "200000-350000"},
     ];
 
+    const fragment = document.createDocumentFragment();
+
     const ulOutter = document.createElement('ul');
 
     for (let i = 0; i < auto.length; ++i) {
@@ -48,7 +50,9 @@
         ulOutter.appendChild(liOutter);
     }
 
-    const body = document.querySelector('body').appendChild(ulOutter);
+    fragment.appendChild(ulOutter);
+
+    const body = document.querySelector('body').appendChild(fragment);
 
 </script>
 
