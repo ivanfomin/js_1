@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    let auto = [
+        {name: "Audi A4", level: "2000-2004", country: "Германия", price: "250000-400000"},
+        {name: "Nissan Murano", level: "2000-2008", country: "Япония", price: "250000-500000"},
+        {name: "BMW 5", level: "2004-2007", country: "Германия", price: "400000-600000"},
+        {name: "Chery Tiggo", level: "2010-2014", country: "Китай", price: "200000-400000"},
+        {name: "Chevrolet", level: "20012-2014", country: "США", price: "300000-450000"},
+        {name: "Daewoo Nexia", level: "2002-2010", country: "Китай", price: "150000-300000"},
+        {name: "Ford Focus", level: "2008-2014", country: "США", price: "250000-500000"},
+        {name: "Honda Accord", level: "2006-20012", country: "Япония", price: "350000-550000"},
+        {name: "Kia Rio", level: "2010-2014", country: "Корея", price: "350000-500000"},
+        {name: "Peugeot", level: "2006-2010", country: "Франция", price: "200000-350000"},
+    ];
+    const ulOutter = document.createElement('ul');
+    for (let i = 0; i < auto.length; ++i) {
+        let liOutter = document.createElement('li');
+        let span = document.createElement('span');
+        span.innerHTML = auto[i].name;
+        liOutter.appendChild(span);
+        let ulInner = document.createElement('ul');
+        let liInner1 = document.createElement('li');
+        let liInner2 = document.createElement('li');
+        let liInner3 = document.createElement('li');
+        liInner1.innerHTML = 'Поколение: ' + auto[i].level;
+        liInner2.innerHTML = 'Страна: ' + auto[i].country;
+        liInner3.innerHTML = 'Цена: ' + auto[i].price;
+        ulInner.appendChild(liInner1);
+        ulInner.appendChild(liInner2);
+        ulInner.appendChild(liInner3);
+        liOutter.appendChild(ulInner);
+        ulOutter.appendChild(liOutter);
+    }
+    const body = document.querySelector('body').appendChild(ulOutter);
+</script>
+
+</body>
+</html>
