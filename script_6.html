@@ -20,26 +20,36 @@
         {name: "Kia Rio", level: "2010-2014", country: "Корея", price: "350000-500000"},
         {name: "Peugeot", level: "2006-2010", country: "Франция", price: "200000-350000"},
     ];
+
     const ulOutter = document.createElement('ul');
+
     for (let i = 0; i < auto.length; ++i) {
         let liOutter = document.createElement('li');
+
         let span = document.createElement('span');
+
         span.innerHTML = auto[i].name;
+
         liOutter.appendChild(span);
+
         let ulInner = document.createElement('ul');
         let liInner1 = document.createElement('li');
         let liInner2 = document.createElement('li');
         let liInner3 = document.createElement('li');
+
         liInner1.innerHTML = 'Поколение: ' + auto[i].level;
         liInner2.innerHTML = 'Страна: ' + auto[i].country;
         liInner3.innerHTML = 'Цена: ' + auto[i].price;
+
         ulInner.appendChild(liInner1);
         ulInner.appendChild(liInner2);
         ulInner.appendChild(liInner3);
         liOutter.appendChild(ulInner);
         ulOutter.appendChild(liOutter);
     }
+
     const body = document.querySelector('body').appendChild(ulOutter);
+
 </script>
 
 </body>
