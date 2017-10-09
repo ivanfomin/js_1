@@ -23,6 +23,8 @@
 
     const fragment = document.createDocumentFragment();
     const ulOutter = document.createElement('ul');
+    fragment.appendChild(ulOutter);
+
 
     for (let i = 0; i < auto.length; ++i) {
 
@@ -48,8 +50,6 @@
         liOutter.appendChild(ulInner);
         ulOutter.appendChild(liOutter);
     }
-
-    fragment.appendChild(ulOutter);
 
     const body = document.querySelector('body').appendChild(fragment);
 
